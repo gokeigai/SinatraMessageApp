@@ -14,6 +14,7 @@ end
 
 get '/messages/:id' do
   @message = Message.find params[:id]
+  @author_messages = Message.where(author: @message.author)
   erb :'messages/show'
 end
 

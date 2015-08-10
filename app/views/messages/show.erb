@@ -9,7 +9,7 @@
 <% if @message.url %><p>Link: <%= @message.url %></p><% end %>
 
 <h3> Other messages by this author: </h3>
-<% Message.where(author: @message.author).each do |post| %>
+<% @author_messages.each do |post| %>
   <% unless post.content == @message.content %>
     <p><%= post.content %></p>
   <% end %>
