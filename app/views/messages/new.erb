@@ -8,6 +8,7 @@
     </ul>
   </div>
 <% end %>
+
 <form method="post" action="/messages">
   <div>
     <label>Author:</label>
@@ -15,11 +16,11 @@
   </div>
   <div>
     <label>Subject:</label>
-    <input type="text" name="subject" value="<%= @message && @message.subject %>">
+    <input type="text" name="title" value="<%= @message && @message.title %>">
   </div>
   <div>
     <label>Content:</label>
-    <input type="text" name="subject" value="<%= @message && @message.content %>">
+    <input type="text" name="content" value="<%= @message && @message.content %>">
   </div>
   <div>
     <input type="submit" value="Submit">
