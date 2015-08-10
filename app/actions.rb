@@ -20,6 +20,7 @@ end
 post '/messages' do
   @message = Message.new(
     content: params[:content],
+    url: params[:url],
     author:  params[:author]
   )
   if @message.save
