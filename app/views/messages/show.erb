@@ -8,5 +8,12 @@
 
 <% if @message.url %><p>Link: <%= @message.url %></p><% end %>
 
+<h3> Other messages by this author: </h3>
+<% Message.where(author: @message.author).each do |post| %>
+  <% unless post.content == @message.content %>
+    <p><%= post.content %></p>
+  <% end %>
+<% end %>
+
 <hr/>
 <a href="/messages">Back to All Messages</a>
